@@ -29,7 +29,7 @@ rm -f ./*.log
 echo "-> Starting clients"
 for((i=1;i<=N_node;i++))
 do
-    cmd="nohup mockclient3 ${i}${json_suffix} ${neig_prefix}${i}${json_suffix} ${g_file} ${tran_prefix}${i}${tran_suffix} ${path_prefix}${i}${path_suffix} ${algo} ${algo_params}"
+    cmd="nohup ../../mockclient3/mockclient3 ${i}${json_suffix} ${neig_prefix}${i}${json_suffix} ${g_file} ${tran_prefix}${i}${tran_suffix} ${path_prefix}${i}${path_suffix} ${algo} ${algo_params}"
     log="${log_prefix}${i}${log_suffix}"
     echo $cmd
     # $cmd >out_${log} 2>err_${log} &

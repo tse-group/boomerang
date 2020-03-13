@@ -140,7 +140,16 @@ go build
 cd ../../
 ```
 
+Then, run the simulations:
 
+```
+cd testbed/server/
+./run-own-comparison-12.sh
+cd ../../
+```
+
+To adjust the parameters or which scenarios are being simulated,
+modify `run-own-comparison-12.sh`.
 
 
 
