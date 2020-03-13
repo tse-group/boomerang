@@ -1,5 +1,11 @@
 # Boomerang: Redundancy Improves Latency and Throughput in Payment-Channel Networks
 
+
+**Disclaimer:**
+This codebase comes with absolutely no warranty.
+Use strictly at your own risk!
+
+
 ## Abstract
 
 In multi-path routing schemes for payment-channel networks,

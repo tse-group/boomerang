@@ -6,7 +6,7 @@ if [ "$#" -ne 3 ]; then
 fi
 
 
-rm -f *.txt *.json
+rm *.txt *.json
 cp ../gen_trace/$1/$2_graph.txt ./graph.txt
 cp ../gen_trace/$1/$2_payments.txt ./payments.txt
 cp ../gen_trace/$1/$2_paths.txt ./paths.txt
