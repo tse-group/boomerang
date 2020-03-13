@@ -1,2 +1,5 @@
 venv/
 __pycache__/
+
+mockclient3/mockclient3
+testbed/parse_graph/parse_graph

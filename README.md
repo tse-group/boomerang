@@ -26,6 +26,7 @@ iff she has learned Bob's secret.
 We implement the Boomerang contract in Bitcoin Script.
 
 
+
 ## Paper
 
 * Boomerang: Redundancy Improves Latency and Throughput in Payment-Channel Networks<br/>
@@ -34,6 +35,7 @@ We implement the Boomerang contract in Bitcoin Script.
   [https://arxiv.org/abs/1910.01834](https://arxiv.org/abs/1910.01834)
 
 For an excellent summary of the paper, check out the [Bitcoin Optech Newsletter #86](https://bitcoinops.org/en/newsletters/2020/02/26/#boomerang-redundancy-improves-latency-and-throughput-in-payment-channel-networks).
+
 
 
 ## Getting Started
@@ -47,8 +49,8 @@ For questions, please contact [Joachim Neu](https://www.jneu.net/).
 The Boomerang experiments were developed on Linux and have
 the following major dependencies (we used the version in brackets):
 
-* Python (v3.8)
-* Go (v1.12.7)
+* Python (v3.8) + dependencies listed in `requirements.txt`
+* Go (v1.13.5)
 * Gnuplot (v5.2)
 * Bash (v5.0.11)
 
@@ -63,8 +65,6 @@ The anatomy of the repository is inspired by that of the [Flash routing protocol
   The environment to run simulation experiments in.
   * `analysis`:
     Gnuplot and Bash scripts to turn simulation results into plots.
-  * `comm`:
-    Go utilities used by `parse_graph`.
   * `gen_trace`:
     Python code `test-own-02-uniform-srcdst-ripple-amount-multiple.py` to setup simulation scenarios (randomly sample network topologies, initial channel balances, and transfer demands from certain probability distributions).
   * `parse_graph`:
@@ -98,6 +98,7 @@ and recreate them using Gnuplot with:
 ```
 cd testbed/analysis/
 ./analyze-comparison-12.sh
+cd ../../
 ```
 
 
@@ -108,6 +109,7 @@ Uncompress the simulation scenarios:
 ```
 cd testbed/gen_trace/
 unzip 02_nodes100_txs500_paths25_edges4.605170to6.907755.zip
+cd ../../
 ```
 
 To create new simulation scenarios,
@@ -121,7 +123,25 @@ cd data/
 bzip2 -d ripple_val.csv.bz2
 cd ../
 python test-own-02-uniform-srcdst-ripple-amount-multiple.py
+cd ../../
 ```
+
+
+### Run Experiments
+
+First, build the Go code in `mockclient3/` and `testbed/parse_graph/`:
+
+```
+cd mockclient3/
+go build
+cd ../
+cd testbed/parse_graph/
+go build
+cd ../../
+```
+
+
+
 
 
 ## References

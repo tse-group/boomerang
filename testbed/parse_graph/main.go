@@ -10,7 +10,7 @@ import (
 	"encoding/json"
 
 	//
-	"comm"
+	"./comm"
 )
 
 type Edge struct {
