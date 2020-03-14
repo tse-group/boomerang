@@ -1,8 +1,6 @@
 #! /bin/bash -ve
 
-rm *.json
-rm *.txt
-rm *.log
+rm *.json *.txt *.log || true
 
 cp ../parse_graph/*.json ./
 cp ../parse_graph/*.txt ./

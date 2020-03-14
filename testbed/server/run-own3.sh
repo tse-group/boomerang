@@ -23,8 +23,7 @@ log_prefix=""
 path_prefix="pa"
 path_suffix=".txt"
 
-rm ./pid
-rm ./*.log
+rm ./pid ./*.log || true
 
 echo "-> Starting clients"
 for((i=1;i<=N_node;i++))
